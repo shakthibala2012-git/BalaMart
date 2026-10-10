@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BalaMart | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #090909;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 420px;
+            padding: 40px 35px;
+            background: #151515;
+            border: 1px solid #303030;
+            border-radius: 16px;
+            box-shadow: 0 0 35px rgba(255, 30, 30, 0.12);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .logo span {
+            color: #ff3030;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 22px;
+            font-size: 23px;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 8px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            background: #0d0d0d;
+            color: white;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #ff3030;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 24px;
+            border: none;
+            border-radius: 8px;
+            background: #ff3030;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #d91f1f;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #ff7777;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #ff4545;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="logo">Bala<span>Mart</span></div>
+        <p class="subtitle">Your marketplace. Your choice.</p>
+
+        <h2>Welcome back!</h2>
+
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your username"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">Log In</button>
+            <p class="message" id="message" role="status"></p>
+        </form>
+
+        <p class="footer">
+            New to BalaMart?
+            <a href="#" id="registerLink">Create an account</a>
+        </p>
+    </main>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const message = document.getElementById("message");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            message.textContent =
+                "Login service will be connected to the backend next.";
+        });
+
+        document.getElementById("registerLink")
+            .addEventListener("click", function(event) {
+                event.preventDefault();
+                message.textContent =
+                    "Registration page will be added next.";
+            });
+    </script>
+</body>
+</html>
